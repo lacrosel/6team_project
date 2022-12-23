@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1023</width>
+    <height>772</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QStackedWidget" name="rentstack">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>768</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1024</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QTableWidget" name="YH_main">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>1001</width>
+       <height>471</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="dragEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+     <column>
+      <property name="text">
+       <string>연번</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>도서관</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>도서명</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>지은이</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>등록번호</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>대출 가능 여부</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignLeading|AlignVCenter</set>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>대출일</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>반납예정일</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="YH_search">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>90</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: white;
+    background-color: rgb(251, 86, 7);
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>도서검색</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="YH_Home">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>10</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: rgb(251, 86, 7);
+    background-color: white;
+    border: 2px solid rgb(251, 86, 7);
+    border-radius: 5px;
+	font: 14pt &quot;GyeonggiBatang&quot;;
+}</string>
+     </property>
+     <property name="text">
+      <string>홈으로</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="YH_rent">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>650</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: white;
+    background-color: rgb(251, 86, 7);
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>대여하기</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="YH_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>761</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>도서명 또는 등록번호로 검색해주세요.</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="YH_reset">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>90</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: rgb(251, 86, 7);
+    background-color: white;
+    border: 2px solid rgb(251, 86, 7);
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>초기화</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="YH_label1">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>620</y>
+       <width>91</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>경기천년바탕 Regular</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;경기천년바탕 Regular&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>정보보기</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="YH_label2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>660</y>
+       <width>821</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="YH_return">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>171</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: white;
+    background-color: rgb(251, 86, 7);
+    border-radius: 5px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>대여 및 반납목록</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="YH_textbrowser">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>10</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 22pt &quot;경기천년바탕 Regular&quot;;
+background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>도서 대여 시스템</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QTableWidget" name="YH_main_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>1001</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="dragEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+     <column>
+      <property name="text">
+       <string>연번</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>도서관</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>도서명</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>지은이</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>등록번호</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>대출일</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>반납예정일</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="YH_rent_2">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>300</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: white;
+    background-color: rgb(251, 86, 7);
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>반납하기</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="YH_main_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>400</y>
+       <width>1001</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="dragEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+     <column>
+      <property name="text">
+       <string>연번</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>도서관</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>도서명</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>지은이</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>등록번호</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="YH_Home_2">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>10</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: rgb(251, 86, 7);
+    background-color: white;
+    border: 2px solid rgb(251, 86, 7);
+    border-radius: 5px;
+	font: 14pt &quot;GyeonggiBatang&quot;;
+}</string>
+     </property>
+     <property name="text">
+      <string>홈으로</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="YH_Back">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: white;
+    background-color: rgb(251, 86, 7);
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>뒤로가기</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="YH_returnbook">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>300</y>
+       <width>491</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>10</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 22pt &quot;경기천년바탕 Regular&quot;;
+background-color: rgb(255, 255, 255);
+</string>
+     </property>
+     <property name="text">
+      <string>도서 대여 현황</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>340</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 22pt &quot;경기천년바탕 Regular&quot;;
+background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>도서 대여 반납 현황</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

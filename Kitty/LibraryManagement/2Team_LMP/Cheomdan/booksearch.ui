@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1031</width>
+    <height>772</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1031</width>
+     <height>768</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QPushButton" name="btn_search">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>550</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: white;
+    background-color: rgb(251, 86, 7);
+    border-radius: 5px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>검색하기</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bookname">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>180</y>
+       <width>581</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sy_label_3">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>430</y>
+       <width>56</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 11pt &quot;경기천년바탕 Regular&quot;;</string>
+     </property>
+     <property name="text">
+      <string>저자</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bookpublisher">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>300</y>
+       <width>581</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sy_label_2">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>310</y>
+       <width>56</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 11pt &quot;경기천년바탕 Regular&quot;;</string>
+     </property>
+     <property name="text">
+      <string>출판사</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bookwriter">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>420</y>
+       <width>581</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sy_label">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>190</y>
+       <width>56</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 11pt &quot;경기천년바탕 Regular&quot;;</string>
+     </property>
+     <property name="text">
+      <string>도서명</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_main">
+     <property name="geometry">
+      <rect>
+       <x>880</x>
+       <y>20</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: rgb(251, 86, 7);
+    background-color: white;
+    border: 2px solid rgb(251, 86, 7);
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>메인페이지</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>90</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 22pt &quot;경기천년바탕 Regular&quot;;</string>
+     </property>
+     <property name="text">
+      <string>도서 정보 조회</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QTableWidget" name="booksearchlist">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>70</y>
+       <width>901</width>
+       <height>621</height>
+      </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <column>
+      <property name="text">
+       <string>연번</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>제목</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>저자</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>출판사</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>소장도서관</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>등록번호</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>청구기호</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>자료상태</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>반납예정일자</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="btn_back_search">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: white;
+    background-color: rgb(251, 86, 7);
+    border-radius: 5px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>검색하기</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_main2">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>21</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 14pt &quot;경기천년바탕 Regular&quot;;
+    color: rgb(251, 86, 7);
+    background-color: white;
+    border: 2px solid rgb(251, 86, 7);
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>메인페이지</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
