@@ -25,9 +25,14 @@ class Main(QMainWindow, form_class):
         # 커서 획득
         c = conn.cursor()
         c.execute(f"SELECT * FROM Gwangju")
+
         self.Header = c.fetchone()
+        self.allList = c.fetchall()
         c.close()
         self.pushButton.clicked.connect(self.Search)
+        self.comboBox_1.currentIndexChanged.connect(self.combobox)
+        self.comboBox_2.currentIndexChanged.connect(self.combobox2)
+        # self.ChangeLabel()
 
 
 
@@ -53,16 +58,56 @@ class Main(QMainWindow, form_class):
                 self.tableWidget.setItem(i, j, QTableWidgetItem(Searchlist[i][j]))
         self.tableWidget.setHorizontalHeaderLabels(self.Header)
 
+
+
+
     def combobox(self):
+        self.comboBox_2.clear()
+        CB_String = self.comboBox_1.currentText()
         # DB 생성 (오토 커밋)
         conn = sqlite3.connect("Shop2.db", isolation_level=None)
+        Codelist=[]
         # 커서 획득
         c = conn.cursor()
-        c.execute(f'SELECT * FROM Gwangju"')
-        # c.execute('SELECT * FROM table1 WHERE id=?', param1)
-        Searchlist = c.fetchall()
+        c.execute(f'SELECT DISTINCT 중분류코드 FROM Shop_Code WHERE 중분류코드 LIKE "%{CB_String}%"')
+        Codelist = c.fetchall()
+        Codelist.sort()
+        print(Codelist)
         c.close()
-        pass
+        for x in Codelist :
+            self.comboBox_2.addItem(x[0])
+        # self.ChangeLabel()
+
+    # def ChangeLabel(self):
+    #     conn = sqlite3.connect("Shop2.db", isolation_level=None)
+    #     Codelist = []
+    #     # 커서 획득
+    #     c = conn.cursor()
+    #     c.execute('DROP VIEW CodeView')
+    #     c.execute('CREATE VIEW CodeView AS \
+    #             SELECT DISTINCT 대분류코드,대분류명\
+    #             FROM Person')
+    #     c.execute('SELECT DISTINCT 대분류코드 FROM CodeView')
+    #
+    #     Codelist = c.fetchall()
+    #     Codelist.sort()
+    #     print(Codelist)
+    #     c.close()
+    def combobox2(self):
+        self.comboBox_3.clear()
+        CB_String = self.comboBox_2.currentText()
+        # DB 생성 (오토 커밋)
+        conn = sqlite3.connect("Shop2.db", isolation_level=None)
+        Codelist=[]
+        # 커서 획득
+        c = conn.cursor()
+        c.execute(f'SELECT DISTINCT 소분류코드 FROM Shop_Code WHERE 소분류코드 LIKE "%{CB_String}%"')
+        Codelist = c.fetchall()
+        Codelist.sort()
+        c.close()
+        for x in Codelist :
+            self.comboBox_3.addItem(x[0])
+
 
 
 if __name__ == "__main__":
