@@ -12,10 +12,10 @@ c = conn.cursor()
 # 데이터 삽입 방법 1
 # c.execute("INSERT INTO table1 \
 #     VALUES(1, 'LEE', '1987-00-00')")
-# # 데이터 삽입 방법 2
-# c.execute("INSERT INTO table1(id, name, birthday) \
-#     VALUES(?,?,?)", \
-#     (2, 'KIM', '1990-00-00'))
+# 데이터 삽입 방법 2
+c.execute("INSERT INTO table1(id, name, birthday) \
+    VALUES(?,?,?)", \
+    (2, 'KIM', '1990-00-00'))
 test_tuple = (
     (3, 'PARK', '1991-00-00'),
     (4, 'CHOI', '1999-00-00'),
